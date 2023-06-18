@@ -8,6 +8,24 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
+  const [experience, setExperience] = useState([])
+  const [skills, setSkills] = useState([])
+
+  useEffect(() => {
+    const experienceQuery = '*[_type == "experiences"]';
+    const skillsQuery = '*[_type == "skills"]';
+
+    client.fetch(experienceQuery)
+      .then((data) => {
+        setExperience(data);
+      })
+
+      client.fetch(skillsQuery)
+      .then((data) => {
+        setSkills(data);
+      })
+  }, []);
+
   return (
     <>
       <h2 className='head-text'>Skills & Experience</h2>
