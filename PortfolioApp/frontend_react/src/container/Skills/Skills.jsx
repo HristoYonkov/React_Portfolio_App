@@ -8,8 +8,8 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
-  const [experience, setExperience] = useState([])
-  const [skills, setSkills] = useState([])
+  const [experience, setExperience] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   useEffect(() => {
     const experienceQuery = '*[_type == "experiences"]';
