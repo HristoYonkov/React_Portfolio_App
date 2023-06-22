@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithubSquare, FaLinkedin, FaFacebook, FaGithub } from 'react-icons/fa';
+import { FaGithubSquare, FaLinkedin, FaFacebook } from 'react-icons/fa';
 const SocialMedia = () => {
     return (
         <div className='app__social'>
@@ -9,9 +9,9 @@ const SocialMedia = () => {
             <div>
                 <FaLinkedin />
             </div>
-            <div>
+            {/* <div>
                 <FaFacebook />
-            </div>
+            </div> */}
         </div>
     )
 }
