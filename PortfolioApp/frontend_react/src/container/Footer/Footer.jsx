@@ -66,9 +66,6 @@ const Footer = () => {
                             value={message}
                             name="message"
                             onChange={handleChangeInput}
-                            id=""
-                            cols="30"
-                            rows="10"
                         />
                     </div>
                     <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending' : 'Send Message'}</button>
