@@ -20,6 +20,17 @@ const Footer = () => {
 
     const handleSubmit = () => {
         setLoading(true);
+        if (Object.values(formData).some((x) => x === '')) {
+            alert('Fill All Fields');
+            setLoading(false);
+            return;
+        }
+
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)) {
+            alert('Invalid Email!');
+            setLoading(false);
+            return;
+        }
 
         const contact = {
             _type: 'contact',
@@ -68,7 +79,7 @@ const Footer = () => {
                             onChange={handleChangeInput}
                         />
                     </div>
-                    <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending' : 'Send Message'}</button>
+                    <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending..' : 'Send Message'}</button>
                 </div>
                 : 
                 <div>
