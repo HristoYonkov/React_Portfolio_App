@@ -108,6 +108,10 @@
         margin: 2rem 0 0 0;
         font-family: var(--font-base);
         cursor: pointer;
+        
+        &:hover {
+            background-color:  var(--brown-color);
+        }
     }
 
     @media screen and (max-width: 768px) {
