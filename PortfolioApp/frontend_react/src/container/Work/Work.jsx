@@ -23,10 +23,10 @@ const Work = () => {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard({y: 100, opacity: 0});
+    setAnimateCard({ y: 100, opacity: 0 });
 
     setTimeout(() => {
-    setAnimateCard([{y: 0, opacity: 1}])
+      setAnimateCard([{ y: 0, opacity: 1 }])
 
       if (item === 'All') {
         setFilterWork(works);
@@ -50,7 +50,7 @@ const Work = () => {
           </div>
         ))}
       </div>
-      
+
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
