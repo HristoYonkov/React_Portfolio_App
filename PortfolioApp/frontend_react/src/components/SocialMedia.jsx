@@ -4,16 +4,17 @@ const SocialMedia = () => {
     return (
         <div className='app__social'>
             <div>
-                <FaGithubSquare />
+                <a href="https://github.com/HristoYonkov"><FaGithubSquare /></a>
+
             </div>
             <div>
-                <FaLinkedin />
+                <a href="https://www.linkedin.com/in/hristo-yonkov-444156260/"><FaLinkedin /></a>
             </div>
             {/* <div>
-                <FaFacebook />
+                <a href="https://www.facebook.com/hristopturs"><FaFacebook /></a>
             </div> */}
         </div>
     )
 }
 
-export default SocialMedia
+export default SocialMedia;
