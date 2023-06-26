@@ -12,7 +12,10 @@ const About = () => {
     useEffect(() => {
         const query = '*[_type == "abouts"]';
         client.fetch(query)
-            .then((data) => setAbouts(data));
+        .then((data) => {
+                let sorted = data.sort((a, b) => a._createdAt.localeCompare(b._createdAt));
+                setAbouts(sorted);
+            });
     }, []);
 
     return (
