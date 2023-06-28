@@ -8,15 +8,21 @@ import { urlFor, client } from '../../client';
 
 const About = () => {
     const [abouts, setAbouts] = useState([]);
+    const [load, setLoad] = useState(false);
 
     useEffect(() => {
         const query = '*[_type == "abouts"]';
         client.fetch(query)
-        .then((data) => {
+            .then((data) => {
                 let sorted = data.sort((a, b) => a._createdAt.localeCompare(b._createdAt));
-                setAbouts(sorted);
+                if (load) {
+                    setAbouts(sorted);
+
+                } else {
+                    setAbouts(sorted.slice(0, 2).sort((a, b) => b._createdAt.localeCompare(a._createdAt)));
+                }
             });
-    }, []);
+    }, [load]);
 
     return (
         <>
@@ -37,6 +43,16 @@ const About = () => {
                     </motion.div>
                 ))}
             </div>
+            {!load && (
+                <a href='#about'>
+                <button type='button' className='p-text' onClick={() => setLoad(true)}>Load More</button>
+                </a>
+            )}
+            {load && (
+                <a href='#about'>
+                    <button type='button' className='p-text' onClick={() => setLoad(false)}>Show Less</button>
+                </a>
+            )}
         </>
     )
 }
