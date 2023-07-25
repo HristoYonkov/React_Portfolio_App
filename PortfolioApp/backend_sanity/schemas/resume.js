@@ -1,12 +1,12 @@
 export default {
     name: 'resume',
     title: 'Resume',
-    type: 'file',
+    type: 'document',
     fields: [
         {
-            name: 'description',
-            type: 'string',
-            title: 'Description'
+            name: 'file',
+            title: 'File.pdf',
+            type: 'file'
         }
     ]
 }
