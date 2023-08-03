@@ -24,9 +24,36 @@ const About = () => {
             });
     }, [load]);
 
+    const downloadFile = () => {
+        const fileName = 'Hristo Yonkov CV.pdf';
+
+        fetch('https://cdn.sanity.io/files/m29wg2x5/production/b2dd3ed53efe3d1a4faaa0c1b0a869835aaf5d42.pdf', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/pdf',
+            },
+        })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+
+                document.body.appendChild(link);
+
+                link.click();
+
+                link.parentNode.removeChild(link);
+            });
+    };
+
     return (
         <>
             <h2 className='head-text'>I Know That <span>Perseverance</span><br />means <span>Good Results</span></h2>
+
+            <button type='button' className='p-text' onClick={() => downloadFile()}>Download CV</button>
 
             <div className='app__profiles'>
                 {abouts.map((about, index) => (
@@ -45,7 +72,7 @@ const About = () => {
             </div>
             {!load && (
                 <a href='#about'>
-                <button type='button' className='p-text' onClick={() => setLoad(true)}>Load More</button>
+                    <button type='button' className='p-text' onClick={() => setLoad(true)}>Load More</button>
                 </a>
             )}
             {load && (
