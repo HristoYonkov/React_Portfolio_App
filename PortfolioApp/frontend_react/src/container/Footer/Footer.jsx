@@ -56,7 +56,7 @@ const Footer = () => {
                     <a href="mailto:hristopturs@gmail.com" className='p-text'>hristopturs@gmail.com</a>
                 </div>
                 <div className='app__footer-card'>
-                    <img src={images.email} alt="mobile" />
+                    <img src={images.mobile} alt="mobile" />
                     <a href="tel: +359 (899) 567-539" className='p-text'>+359 (899) 567-539</a>
                 </div>
             </div>
@@ -64,9 +64,14 @@ const Footer = () => {
             {!isFormSubmited ?
                 <div className='app__footer-form app__flex'>
                     <div className='app__flex'>
-                        <input className='p-text' type="text" placeholder='Your Name' name='name' value={name} onChange={handleChangeInput} />
+                        <input className='p-text' type="text"
+                            placeholder='Your Name'
+                            name='name'
+                            value={name}
+                            onChange={handleChangeInput}
+                        />
                     </div>
-                    
+
                     <div className='app__flex'>
                         <input className='p-text' type="email" placeholder='Your Email' name='email' value={email} onChange={handleChangeInput} />
                     </div>
@@ -81,11 +86,11 @@ const Footer = () => {
                     </div>
                     <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending..' : 'Send Message'}</button>
                 </div>
-                : 
+                :
                 <div>
                     <h3 className='head-text'>Thnank you for getting in touch!</h3>
                 </div>
-            
+
             }
 
         </>
