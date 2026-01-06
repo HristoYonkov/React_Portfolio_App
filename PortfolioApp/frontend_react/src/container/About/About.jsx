@@ -28,7 +28,7 @@ const About = () => {
         const fileName = 'Hristo Yonkov CV.pdf';
 
         // Change link from sanity file storage to update the resume in the future!
-        fetch('https://cdn.sanity.io/files/m29wg2x5/production/0392a3dbdbe00725a2596218f92b761bb3feeaa0.pdf', {
+        fetch('https://cdn.sanity.io/files/m29wg2x5/production/ee4c3bfebf3d3aaed9432c7f593fa791844b0202.pdf', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/pdf',
